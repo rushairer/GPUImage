@@ -92,7 +92,35 @@ void setColorConversion709( GLfloat conversionMatrix[9] )
     
 	// Grab the back-facing or front-facing camera
     _inputCamera = nil;
-	NSArray *devices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
+	
+    NSArray *devices;
+    if (@available(iOS 13.0, *)) {
+        NSArray *deviceTypes = @[
+            AVCaptureDeviceTypeBuiltInWideAngleCamera,
+            AVCaptureDeviceTypeBuiltInDualCamera,
+            AVCaptureDeviceTypeBuiltInTripleCamera
+        ];
+        AVCaptureDeviceDiscoverySession *session = [AVCaptureDeviceDiscoverySession discoverySessionWithDeviceTypes:deviceTypes
+                                                                                                          mediaType:AVMediaTypeVideo
+                                                                                                           position:AVCaptureDevicePositionUnspecified
+        ];
+        
+        devices = session.devices;
+    } else if(@available(iOS 10.2, *)){
+        NSArray *deviceTypes = @[
+            AVCaptureDeviceTypeBuiltInWideAngleCamera,
+            AVCaptureDeviceTypeBuiltInDualCamera
+        ];
+        AVCaptureDeviceDiscoverySession *session = [AVCaptureDeviceDiscoverySession discoverySessionWithDeviceTypes:deviceTypes
+                                                                                                          mediaType:AVMediaTypeVideo
+                                                                                                           position:AVCaptureDevicePositionUnspecified
+        ];
+        
+        devices = session.devices;
+    } else {
+        devices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
+    }
+    
 	for (AVCaptureDevice *device in devices) 
 	{
 		if ([device position] == cameraPosition)
