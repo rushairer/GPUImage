@@ -112,7 +112,6 @@
 		BCA3F32017239B6500E28AEC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA3F31F17239B6500E28AEC /* Cocoa.framework */; };
 		BCA3F3621723A8FA00E28AEC /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA3F3601723A8FA00E28AEC /* OpenGL.framework */; };
 		BCA3F3631723A8FA00E28AEC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA3F3611723A8FA00E28AEC /* QuartzCore.framework */; };
-		BCA3F3651723A96600E28AEC /* GPUImage.h in Headers */ = {isa = PBXBuildFile; fileRef = BCA3F3641723A96600E28AEC /* GPUImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BCAA73B71C18E09100BC2D31 /* GPUImageFourInputFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = BCAA73B51C18E09100BC2D31 /* GPUImageFourInputFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BCAA73B81C18E09100BC2D31 /* GPUImageFourInputFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = BCAA73B61C18E09100BC2D31 /* GPUImageFourInputFilter.m */; };
 		BCAE41E41731C3000020F80D /* GPUImageThreeInputFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = BCAE41E21731C3000020F80D /* GPUImageThreeInputFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1133,7 +1132,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BCA3F3651723A96600E28AEC /* GPUImage.h in Headers */,
 				A87E5E1617764B16007FD5B1 /* GPUImageRawDataInput.h in Headers */,
 				A87E5E12177648F3007FD5B1 /* GPUImageRawDataOutput.h in Headers */,
 				BCF40F1217247D68005AE36A /* GPUImageContext.h in Headers */,
